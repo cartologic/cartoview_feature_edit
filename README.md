@@ -1,2 +1,2 @@
-# cartoview_geonode_viewer
-Configure a map with multiple components, based on Boundless SDK
+# cartoview_feature_edit
+Edit and Add Features, based on Boundless SDK
