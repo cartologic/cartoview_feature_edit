@@ -29,7 +29,8 @@ class FeatureEdit extends React.Component {
     this.state = {
       errors: [],
       errorOpen: false,
-      openAttachments:false
+      openAttachments:false,
+      selectedLayer:null
     };
   }
 
@@ -86,9 +87,9 @@ class FeatureEdit extends React.Component {
       el.style.display = 'block';
     }
   }
-  handleToggle(){
+  handleToggle(layer){
     let {openAttachments}=this.state
-    this.setState({openAttachments:!openAttachments})
+    this.setState({openAttachments:!openAttachments,selectedLayer:layer})
   }
   render() {
     const actions = [< RaisedButton label = "Cancel" primary = {
@@ -122,7 +123,7 @@ class FeatureEdit extends React.Component {
             <FeatureTable handle={this.handleToggle.bind(this)} refreshRate={250} ref='table' map={map}/>
           </div>
         </MapPanel>
-        <AttachmentDrawer open={this.state.openAttachments} handle={this.handleToggle.bind(this)} ></AttachmentDrawer>
+        <AttachmentDrawer open={this.state.openAttachments} layer={this.state.selectedLayer} handle={this.handleToggle.bind(this)} ></AttachmentDrawer>
       </div>
     );
   }
