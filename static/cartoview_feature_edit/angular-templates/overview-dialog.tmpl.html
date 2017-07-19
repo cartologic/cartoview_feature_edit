@@ -1,0 +1,31 @@
+<md-dialog aria-label="North">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Overview Map Configrations</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">clear</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <div layout="row" layout-align="center center" style="margin-bottom: 10px">{{ message }}</div>
+                <form name="myForm" role="form">
+                    <div layout-gt-xs="row">
+                        <div layout="row" layout-align="start" flex>
+                            <md-checkbox ng-model="overview_config.collapsed"
+                                         aria-label="collapsed">
+                                Collapsed
+                            </md-checkbox>
+                        </div>
+                    </div>
+                    <md-button ng-click="answer(overview_config)" class="md-raised md-primary">Confirm</md-button>
+                </form>
+            </div>
+
+        </md-dialog-content>
+    </form>
+</md-dialog>

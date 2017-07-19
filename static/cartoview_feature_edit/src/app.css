@@ -1,0 +1,604 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Dead Simple Grid (c) 2015 Vladimir Agafonkin */
+
+.row .row {
+  margin: 0 -1.5em;
+}
+
+.col {
+  padding: 0 0em;
+}
+
+.basemapselector {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.featureTable {
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  height: 100%;
+  overflow-y:scroll;
+  margin-right: auto!important;
+  margin-left: auto!important;
+}
+.FTable{
+  position: absolute;
+  z-index: 12;
+  bottom: 0px;
+  display: block;
+  height: 40% !important;
+  width: 100% !important;
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media only screen {
+  .col {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+
+/* end Dead Simple Grid */
+
+#map {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+#content, #main {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#zoom-buttons {
+  position: relative;
+  padding: 10%;
+}
+
+#home-button {
+  postion: relative;
+  padding: 10%;
+}
+
+#table_btn {
+  postion: relative;
+  padding: 10%;
+}
+
+.about-ico {
+  color: black !important;
+}
+
+.headerIcons {
+  color: #000000 !important;
+}
+
+#print-button {
+  position: relative;
+  padding: 10%;
+}
+
+#globe-button {
+  position: relative;
+  padding: 10%;
+  /*right: 20px;
+    top: 280px;*/
+}
+
+.layer-tree-panel {
+  /*max-height: 94vh !important;*/
+}
+
+#debug {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  z-index: 10;
+  background: rgba(204, 204, 204, 0.8);
+  width: 50%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+}
+
+#debug label {
+  margin-right: 10px;
+}
+
+#debug input {
+  width: 50%;
+}
+
+#about-panel {
+  display: block;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  top: 180px;
+  left: 80px;
+  height: 400px;
+  width: 300px;
+  min-width: 300px;
+  z-index: 100;
+}
+
+.query-panel {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  padding: 15px;
+  border-left: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  top: 20px;
+  right: auto;
+  z-index: 1111111;
+  cursor: pointer;
+}
+
+#geolocation-control {
+  position: relative;
+  padding: 10%;
+}
+
+.layer-switcher.shown .layer-tree-panel {
+  display: block;
+}
+
+div.layer-tree-panel {
+  position: fixed;
+  margin-left: -60%;
+  margin-top: 20%;
+}
+
+.attributes-table {
+  display: none;
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  z-index: 1;
+}
+
+.layerselect {
+  padding: 10px;
+  background: white;
+}
+
+.ol-scale-line {
+  position: fixed;
+  left: 40px;
+}
+
+#wfst {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  padding: 5px;
+  border: 1px solid #000000;
+  top: 72px;
+  right: auto;
+  z-index: 11111110;
+}
+
+
+/*.ol-custom-overviewmap,
+.ol-custom-overviewmap.ol-uncollapsible {
+    bottom: 5px;
+    left: 5px;
+    right: auto;
+    top: auto;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed) {
+    border: 1px solid black;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-map {
+    border: none;
+    width: 150px;
+}
+
+.ol-custom-overviewmap .ol-overviewmap-box {
+    border: 2px solid red;
+}
+
+.ol-custom-overviewmap:not(.ol-collapsed) button {
+    top: auto;
+    right: auto;
+    left: 1px;
+    buttom: 1px;
+}*/
+
+#table {
+  position: fixed;
+  bottom: 0px;
+  display: none;
+  width: 100%;
+  z-index: 121;
+  padding: 0px;
+  min-height: 100px;
+  max-height: 45%;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.chart-panel {
+  display: none;
+  position: fixed;
+  background: rgba(255, 255, 255, 1);
+  padding-top: 30px;
+  border: 1px solid #000000;
+  bottom: 0px;
+  left: 0;
+  height: 30%;
+  width: 100%;
+  padding-bottom: 60px;
+  z-index: 1002;
+}
+
+.about-closer-icon {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-decoration: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.about-closer-icon:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+
+.chart-panel-closer {
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  text-decoration: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.chart-panel-closer:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 1;
+  filter: alpha(opacity=100);
+  cursor: pointer;
+}
+
+#edit-tool-panel {
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 1);
+  padding: 15px;
+  border-left: 1px solid #bbbbbb;
+  border-bottom: 1px solid #bbbbbb;
+  top: 72px;
+  right: 100px;
+  max-width: 50%;
+  z-index: 11110111;
+}
+
+.ol-mouse-position {
+  bottom: 10px;
+  right: 8px;
+  top: auto;
+  position: fixed;
+  background: rgba(0, 60, 136, .5);
+  border-radius: 4px;
+  color: #ffffff;
+  padding: 4px;
+}
+
+.side-menu-btn {
+  position: fixed;
+  top: 20px !important;
+  left: 20px;
+  z-index: 1;
+}
+
+.layer-switcher {
+  position: relative;
+  padding: 10%;
+  z-index: 100;
+  /*right: 20px;
+  top:70px;*/
+  /* right: 20px; */
+}
+
+.feature-table {
+  padding: 10px !important;
+}
+
+#zoom-slider {
+  position: absolute;
+  width: 200px;
+  left: 100px;
+  top: 0px;
+}
+
+.Addmodal {
+  position: fixed;
+  z-index: 111000;
+  /* right: 20px; */
+  top: 120px;
+  left: 20px;
+}
+
+.charts_button {
+  position: fixed;
+  z-index: 1;
+  /* right: 20px; */
+  top: 170px;
+  left: 20px;
+}
+
+.query_button {
+  position: fixed;
+  z-index: 1;
+  /* right: 20px; */
+  /*top: 220px;
+      left: 20px;*/
+}
+
+.basemap_button {
+  /*position: fixed;*/
+  z-index: 1;
+  /* right: 20px; */
+  /*top: 270px;
+  left: 20px;*/
+}
+
+.search-cancel-btn {
+  float: right;
+}
+
+div.search-cancel-btn {
+  margin: 25px;
+}
+
+.navigation-btn {
+  position: fixed;
+  top: 390px !important;
+  right: 20px;
+  z-index: 1;
+}
+
+.nav-icon {
+  left: 0px;
+}
+
+.search_button {
+  /*position: fixed;*/
+  z-index: 1;
+  /* right: 20px; */
+  /*top: 320px;
+  left: 20px;*/
+}
+
+#rotate-button {
+  position: relative;
+  padding: 10%;
+}
+
+#geocoding_paper {
+  position: fixed;
+  display: none;
+  max-width: 380px;
+  padding: 10px;
+  top: 60px;
+  left: 100px;
+  right: auto;
+  z-index: 1000000;
+}
+
+.geocoding-results {
+  max-width: 380px !important;
+}
+
+.Draw {
+  position: fixed;
+  z-index: 1;
+  /*right: 20px;*/
+  top: 480px;
+}
+
+#geocoding {
+  display: none;
+  position: absolute;
+  top: 72px;
+  max-width: 30%;
+  /*right: 35%;*/
+  background: aliceblue;
+  padding: 20px;
+  border-radius: 25px;
+  -webkit-box-shadow: 4px 3px 38px -2px rgba(0, 0, 0, 0.47);
+  -moz-box-shadow: 4px 3px 38px -2px rgba(0, 0, 0, 0.47);
+  box-shadow: 4px 3px 38px -2px rgba(0, 0, 0, 0.47);
+}
+
+#menu_bar {
+  display: block;
+  position: fixed;
+  background: #fbf9ff;
+  z-index: 1;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 2%;
+  -moz-box-shadow: -1px 2px 21px 6px rgba(212, 212, 212, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 -1px 0px rgba(0, 0, 0, 0.02);
+  top: 10px;
+  left: 10px;
+  /*left: 40px;*/
+}
+
+#edit-tool-panel {
+  border-left: none;
+  border-bottom: none;
+  border-radius: 3%;
+  top: 5px;
+  right: auto;
+  -webkit-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.56);
+  -moz-box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 0px 15px -3px rgba(0, 0, 0, 0.56);
+}
+
+.select {
+  /*margin-right: 10px;
+    width: 120px;*/
+}
+
+.navigation {
+  /*margin: auto;*/
+}
+
+.geocoding {
+  position: relative;
+  font-size: 16px;
+  width: 280px !important;
+  height: 48px;
+  display: inline-block;
+  line-height: 24px;
+  background-color: transparent;
+  font-family: Roboto, sans-serif;
+  transition: height 200ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  cursor: auto;
+}
+
+.query-builder:hover {
+  cursor: pointer;
+}
+
+.ol-zoomslider {
+  background: rgba(16, 168, 187, 0.48) !important;
+  padding: 0px !important;
+  top: 4.5em;
+  left: .5em;
+  height: 152px;
+  border-radius: 10px !important;
+  border-style: solid;
+  border-width: thin;
+  border-color: rgba(141, 141, 179, 0.76);
+}
+
+.ol-zoomslider:hover {
+  background-color: rgba(16, 168, 187, 0.48) !important;
+}
+
+.ol-zoomslider-thumb {
+  top: 183px;
+}
+
+.ol-zoomslider button {
+  position: relative;
+  height: 15px;
+  width: 15px !important;
+  border-radius: 25px !important;
+  background-color: rgba(1, 3, 56, 0.38) !important;
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    cursor: pointer;
+  }
+  .ol-zoomslider {
+    left: .5em;
+    height: 150px !important;
+    background: rgba(16, 168, 187, 0.48) !important;
+    padding: 0px !important;
+    border-radius: 10px !important;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgba(141, 141, 179, 0.76);
+  }
+  .geocoding {
+    width: 180px !important;
+  }
+  /*.layer-selector {
+        width: 150px !important;
+    }*/
+  .attributes-table {
+    /*overflow: scroll !important;*/
+  }
+  #playback {
+    right: auto !important;
+    width: auto !important;
+    height: auto !important;
+  }
+  #wfst {
+    right: auto;
+  }
+}
+
+@media screen and (max-height: 414px) {
+  #rotate-button {
+    postion: relative;
+    padding: 10%;
+    /*left: 70px !important;
+      top: 120px !important;*/
+  }
+  #home-button {
+    postion: relative;
+    padding: 10%;
+  }
+  .search_button {
+    left: 70px !important;
+    top: 70px !important;
+  }
+  .dialog {
+    transform: none !important;
+  }
+  .dialog_body {
+    max-height: 100px !important;
+  }
+  .img-ext-btn {
+    /*position : fixed;
+    top : 50px !important;
+    padding: 0 !important;
+    box-shadow:0 !important;*/
+    line-height: 0px !important;
+    right: 0px !important;
+  }
+  .headerIcons {
+    right: 3px !important;
+    bottom: 3px !important;
+  }
+  .select {
+    /*right:5px !important;*/
+  }
+}

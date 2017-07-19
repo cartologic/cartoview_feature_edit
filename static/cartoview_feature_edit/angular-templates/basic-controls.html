@@ -1,0 +1,179 @@
+<div layout="row">
+
+  <div layout="column" flex="50">
+    <div layout="row" layout-wrap>
+      <div flex="66">
+        <h2> Map Navigation</h2>
+        <div layout="row" layout-wrap>
+          <div flex="66">
+            <md-checkbox ng-model="instanceObj.config.showZoomControls" aria-label=" ZoomControls" ng-checked="true">ZoomControls
+            </md-checkbox>
+          </div>
+
+          <div flex="33" ng-show="instanceObj.config.showZoomControls"><a href="" ng-click="openZoomDialog($event)"><i
+                      class="material-icons md-36"
+                      style="color: #F44336;">settings</i></a>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div layout="row" layout-wrap>
+      <div flex="66">
+        <md-checkbox ng-model="instanceObj.config.showNorth" aria-label=" North"> North</md-checkbox>
+      </div>
+
+      <div flex="33" ng-show="instanceObj.config.showNorth"><a href="" ng-click="openNorthDialog($event)"><i
+                         class="material-icons md-36"
+                         style="color: #F44336;">settings</i></a>
+      </div>
+    </div>
+
+
+    <md-checkbox ng-model="instanceObj.config.showMousePostion" aria-label=" MousePostion"> Show Mouse Postion on map
+    </md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showLayerSwitcher" aria-label=" Layer Switcher">Layer Switcher
+    </md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showHome" aria-label=" Home" ng-checked="true"> Initial Extent Button
+    </md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showGeoLocation" aria-label=" GeoLocation" ng-checked="true"> GeoLocation
+    </md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.show3D" aria-label=" show3D">show3D</md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showBaseMapSelector" aria-label=" Base Map Selector" ng-checked="true">Base Map Selector
+    </md-checkbox>
+
+    <md-checkbox ng-model="instanceObj.config.showLegend" aria-label=" Legend"> Legend</md-checkbox>
+    <!-- <md-checkbox ng-model="instanceObj.config.showZoomSlider" aria-label=" Zoom Slider">Zoom Slider
+        </md-checkbox> -->
+
+
+
+    <!-- <md-checkbox ng-model="instanceObj.config.showEditPopup" aria-label=" Edit Popup"> Edit Popup
+        </md-checkbox> -->
+    <hr/>
+    <h2>Map Tools </h2>
+
+
+
+
+    <md-checkbox ng-model="instanceObj.config.showAddLayerModal" aria-label=" Print" ng-checked="true"> Add Layer Modal</md-checkbox>
+    <!-- <md-checkbox ng-model="instanceObj.config.showAddLayer" aria-label=" AddLayer"> AddLayer</md-checkbox> -->
+    <!--<md-checkbox ng-model="instanceObj.config.showSelection" aria-label=" Selection"> Selection
+        </md-checkbox>-->
+
+    <md-checkbox ng-model="instanceObj.config.showLoadingPanel" aria-label=" LoadingPanel"> LoadingPanel
+    </md-checkbox>
+
+    <md-checkbox ng-model="instanceObj.config.showMeasure" aria-label=" Measure" ng-checked="true"> Measure
+    </md-checkbox>
+
+
+    <div layout="row" layout-wrap>
+      <div flex="66">
+        <md-checkbox ng-model="instanceObj.config.showAttributesTable" aria-label=" AttributesTable" ng-checked="true">
+          Attributes Table
+        </md-checkbox>
+      </div>
+    </div>
+
+
+  </div>
+  <div layout="column" flex="50">
+    <h2>Reporting</h2>
+
+    <div layout="row" layout-wrap>
+      <div flex="66">
+        <md-checkbox ng-model="instanceObj.config.showInfoPopup" aria-label=" Info Popup"> Info Popup
+        </md-checkbox>
+      </div>
+      <div flex="33" ng-show="instanceObj.config.showInfoPopup">
+        <a href="">
+          <md-tooltip md-direction="top">
+            If Info popup & Edit Popup enabled at the same time Info popup will not work
+          </md-tooltip>
+          <i class="material-icons md-36" style="color: #33
+            4650;">info</i></a>
+      </div>
+    </div>
+
+    <md-checkbox ng-model="instanceObj.config.showWFS_T" aria-label=" WFS-T" ng-checked="true">DrawFeature</md-checkbox>
+
+    <md-checkbox ng-model="instanceObj.config.showPrint" aria-label=" Print"> Print</md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showExportImage" aria-label=" Export Image"> Export Image
+    </md-checkbox>
+
+    <md-checkbox ng-model="instanceObj.config.showAbout" aria-label=" Print"> About Panel</md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showGeoCoding" aria-label=" GeoCoding" ng-checked="true"> Search by address
+    </md-checkbox>
+    <md-checkbox ng-model="instanceObj.config.showQuery" aria-label=" Query"> Query
+    </md-checkbox>
+
+
+
+
+
+
+
+
+    <!-- <div layout="row" layout-wrap>
+             <div flex="66">
+
+               <md-checkbox ng-model="instanceObj.config.showScalebar" aria-label=" Scalebar"> Scalebar
+               </md-checkbox>
+             </div>
+
+             <div flex="33" ng-show="instanceObj.config.showScalebar"><a href="" ng-click="openDialog($event)"><i
+                     class="material-icons md-36"
+                     style="color: #F44336;">settings</i></a>
+             </div>
+         </div> -->
+
+
+
+
+    <!-- <div layout="row" layout-wrap>
+            <div flex="66">
+                <md-checkbox ng-model="instanceObj.config.showMapOverView" aria-label=" MapOverView"> OverView
+                    Map
+                </md-checkbox>
+            </div>
+
+            <div flex="33" ng-show="instanceObj.config.showMapOverView"><a href=""
+                                                                           ng-click="openOverviewDialog($event)"><i
+                    class="material-icons md-36"
+                    style="color: #F44336;">settings</i></a>
+            </div>
+        </div> -->
+    <!--  -->
+    <div>
+
+      <h2> Comming Soon  </h2>
+
+      <div layout="row" layout-wrap>
+        <div flex="66">
+          <md-checkbox ng-model="instanceObj.config.showCharts" aria-label=" Charts" disabled="true"> Charts</md-checkbox>
+        </div>
+
+        <div flex="33" ng-show="instanceObj.config.showCharts"><a href="" ng-click="openChartsDialog($event)"><i
+                  class="material-icons md-36"
+                  style="color: #F44336;">settings</i></a>
+        </div>
+      </div>
+      <div layout="row" layout-wrap>
+        <div flex="66">
+          <md-checkbox ng-model="instanceObj.config.showPlayback" aria-label=" Playback" disabled="true"> Playback
+          </md-checkbox>
+        </div>
+        <!-- <div flex="33" ng-show="instanceObj.config.showPlayback"><a href="" ng-click="openPlaybackDialog($event)"><i
+                       class="material-icons md-36"
+                       style="color: #F44336;">settings</i></a>
+        </div> -->
+      </div>
+      <md-checkbox ng-model="instanceObj.config.showmapconfig" aria-label=" Edit" disabled="true">Map Config (Save/Load)</md-checkbox>
+    </div>
+
+
+  </div>
+</div>

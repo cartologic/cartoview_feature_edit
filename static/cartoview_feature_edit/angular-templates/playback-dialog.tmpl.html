@@ -1,0 +1,65 @@
+<md-dialog aria-label="Playback Configration">
+    <form name="myForm" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Playback Configration</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">clear</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div layout="row" layout-align="center center"
+                 style="margin-bottom: 10px; min-width: 700px;">{{ message }}</div>
+            <div class="md-dialog-content">
+                <div layout="row" layout="column">
+                    <div flex="50">
+                        <div layout="column">
+                            <div flex-gt-xs="">
+                                <h5>Max Date</h5>
+                                <md-datepicker ng-model="playback_config.maxDate"
+                                               ng-init="playback_config.maxDate ? playback_config.maxDate:playback_config.maxDate=date"
+                                               md-placeholder="Enter maxDate"
+                                               md-open-on-focus="" required></md-datepicker>
+                            </div>
+                            <div flex-gt-xs="">
+                                <h5>Min Date</h5>
+                                <md-datepicker ng-model="playback_config.minDate"
+                                               ng-init="playback_config.minDate ? playback_config.minDate:playback_config.minDate=date"
+                                               md-placeholder="Enter minDate"
+                                               md-open-on-focus="" required></md-datepicker>
+                            </div>
+                            <md-input-container>
+                                <label>Interval</label>
+                                <input type="number" ng-model="playback_config.interval"
+                                       ng-init="playback_config.interval ? playback_config.interval : playback_config.interval=500"
+                                       name="interval" required/>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>number of intervals</label>
+                                <input type="number" ng-model="playback_config.numIntervals"
+                                       ng-init="playback_config.numIntervals ? playback_config.numIntervals : playback_config.numIntervals=100"
+                                       name="numIntervals"
+                                       required/>
+                            </md-input-container>
+                            <br>
+                            <div flex-gt-xs="">
+                                <md-checkbox
+                                        ng-init="playback_config.autoPlay = playback_config.autoPlay==null ? false : playback_config.autoPlay"
+                                        ng-model="playback_config.autoPlay"
+                                        aria-label="autoPlay">
+                                    autoplay
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <md-button ng-click="answer(playback_config)" class="md-raised md-primary">Confirm</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

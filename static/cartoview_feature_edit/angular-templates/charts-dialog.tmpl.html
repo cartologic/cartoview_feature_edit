@@ -1,0 +1,120 @@
+<md-dialog aria-label="Charts Configration">
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Charts Configration</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <i class="material-icons">clear</i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div layout="row" layout-align="center center"
+                 style="margin-bottom: 10px; min-width: 700px;">{{ message }}</div>
+            <div class="md-dialog-content">
+                <div layout="row" layout="column">
+                    <div flex="70" style="border-right: 2px solid #989898;" layout-margin="10px">
+                        <div layout="column">
+                            <md-input-container>
+                                <label>Chart name</label>
+                                <input type="text" ng-model="title" name="title" required/>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Display mode</label>
+                                <md-select name="displayMode" ng-model="displayMode" ng-change="displayModeChanged()"
+                                           required>
+                                    <md-option value="0" selected>by feature</md-option>
+                                    <md-option value="1">by category</md-option>
+                                    <md-option value="2">count by category</md-option>
+                                </md-select>
+                                <div class="errors" ng-messages="myForm.units.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Layer</label>
+                                <md-select name="layer_name" ng-model="layer_name"
+                                           ng-change="layer_nameChanged()"
+                                           required>
+                                    <md-option ng-value="layer"
+                                               ng-repeat="layer in layers">{{ layer }}</md-option>
+
+                                </md-select>
+                                <div class="errors" ng-messages="myForm.units.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Category Field</label>
+                                <md-select name="categoryField" ng-model="category_field"
+                                           ng-change="categoryFieldChanged()"
+                                           required>
+                                    <md-option ng-value="category"
+                                               ng-repeat="category in Categories">{{ category }}</md-option>
+
+                                </md-select>
+                                <div class="errors" ng-messages="myForm.units.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Value Fields</label>
+                                <md-select ng-model="selectedvalues" ng-change="ValueFieldsChanged()" multiple=""
+                                           required>
+                                    <md-optgroup label="Fields">
+                                        <md-option ng-value="category"
+                                                   ng-repeat="category in Categories">{{ category }}</md-option>
+                                    </md-optgroup>
+                                </md-select>
+                                <div class="errors" ng-messages="myForm.units.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                            <md-input-container>
+                                <label>Operation for aggregation</label>
+                                <md-select name="operation" ng-model="operation"
+                                           ng-change="operationChanged()"
+                                           required>
+                                    <md-option value="0" selected>Minimum</md-option>
+                                    <md-option value="1">Maximum</md-option>
+                                    <md-option value="2">Sum</md-option>
+                                    <md-option value="3">Average</md-option>
+                                </md-select>
+
+                                <div class="errors" ng-messages="myForm.units.$error">
+                                    <div ng-message="required">Required</div>
+                                </div>
+                            </md-input-container>
+                        </div>
+                    </div>
+                    <div flex="30">
+                        <md-subheader class="md-no-sticky">Defined Charts</md-subheader>
+                        <div class="demo-select-all-checkboxes" flex="100" ng-repeat="chart in charts">
+                          <md-checkbox ng-click="toggle(chart,$index)">
+                           {{ chart.title }}
+                          </md-checkbox>
+                        </div>
+                        <!-- <md-list flex>
+                            <md-list-item class="md-3-line" ng-repeat="chart in charts" ng-click="null">
+                                <i class="material-icons md-avatar">trending_up</i>
+                                <div class="md-list-item-text" layout="column">
+                                    <h3>{{ chart.title }}</h3>
+                                </div>
+                            </md-list-item>
+                        </md-list> -->
+                    </div>
+                </div>
+                <div layout="row">
+                    <md-button ng-click="add()" class="md-raised md-primary">Add</md-button>
+                    <md-button ng-if="selectedtoremove" ng-click="remove(selectedtoremove)" class="md-raised md-primary">Remove</md-button>
+                </div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="answer(charts)" class="md-raised md-primary">Confirm</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
