@@ -483,9 +483,10 @@ class FeatureTable extends React.Component {
     });
   }
   _onFeatureAttachments(feature) {
+    console.log(feature.get('id'));
     console.log(this._layer);
     var me = this;
-    this.props.handle(this._layer)
+    this.props.handle(this._layer,feature.get('id'))
 
   }
   _onDelete(feature) {

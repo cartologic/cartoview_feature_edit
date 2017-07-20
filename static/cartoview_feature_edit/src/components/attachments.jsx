@@ -22,32 +22,36 @@ export default class AttachmentDrawer extends React.Component {
     }
 
   }
-  loadComments(layerName) {
-    fetch("/REST/attachments/comment/?layer_name=hisham").then((response) => response.json()).then((data) => {
+  loadComments(layerName,featureId) {
+    fetch("/REST/attachments/comment/?layer_name="+layerName+"&feature_exact="+featureId).then((response) => response.json()).then((data) => {
       this.setState({comments: data.objects, loading: false})
     }).catch((error) => {
       console.error(error);
     });
   }
   handleToggle() {
-    this.props.handle(this.props.layer)
+    this.props.handle(this.props.layer,this.props.featureId)
   }
   componentDidMount() {
-    if (this.props.layer) {
-      console.log(this.props.layer.get('name'));
-      this.loadComments(this.props.layer.get('name'))
+    let layerName=this.props.layer ? this.props.layer.get('name') : null;
+    let featureId=this.props.featureId
+    if (layerName && featureId) {
+      console.log(layerName);
+      this.loadComments(layerName,featureId)
     }
   }
   avatar(comment) {
     return <Avatar src={comment.user.avatar}/>
   }
   componentWillReceiveProps(nextProps) {
-    if (nextProps.layer !== this.props.layer) {
-      this.loadComments(nextProps.layer.get('name'))
+    let layer=nextProps.layer
+    let featureId=nextProps.featureId
+    if (layer !== this.props.layer || featureId!= this.props.featureId) {
+      this.loadComments(layer.get('name'),featureId)
     }
   }
   render() {
-
+    console.log(!this.state.loading && this.state.comments.length == 0);
     return (
 
       <div>
@@ -63,12 +67,17 @@ export default class AttachmentDrawer extends React.Component {
                   comment.user.avatar
                 } />} primaryText={comment.user.username} secondaryText={< p > {
                   comment.comment
-                } < /p>} secondaryTextLines={2}></ListItem>
+                } < /p>}></ListItem>
                 <Divider inset={true}/>
 
                 </div>
 
             })}
+            {!this.state.loading && this.state.comments.length == 0 && <div>
+              {"No Comments"}
+              <Divider inset={true}/>
+
+              </div>}
 
           </List>
         </Drawer>
