@@ -178,7 +178,7 @@ class FeatureEdit extends React.Component {
 		</div>
 		const selection = <Select toggleGroup='nav' map={map}/>
 		const navigation = <Navigation secondary={true} toggleGroup='nav' toolId='nav'/>
-		const appToolbar = <Header showLeftIcon={false} title='Feature Edit'>
+		const appToolbar = <Header showLeftIcon={false} title={appConfig.layer.split( ":" )[ 1 ]}>
 			{navigation}
 			{selection}
 			<DrawFeature toggleGroup='nav' map={map}/>
