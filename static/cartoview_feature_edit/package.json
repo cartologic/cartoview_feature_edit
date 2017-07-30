@@ -1,7 +1,7 @@
 {
-  "name": "CartoviewWebappBuilder",
+  "name": "CartoviewFeatureEdit",
   "version": "1.0.0",
-  "description": "Cartoview Webapp builder",
+  "description": "Cartoview Feature Edit",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,10 +23,13 @@
     "react-image": "^1.0.1",
     "react-intl": "^2.3.0",
     "react-paginate": "^4.4.3",
+    "react-select": "^1.0.0-rc.5",
     "react-spinkit": "^3.0.0",
+    "react-tag-autocomplete": "^5.4.1",
     "react-tap-event-plugin": "^2.0.1",
     "react-toggle-switch": "^2.1.4",
     "react-transition-group": "^1.1.3",
+    "slugify": "^1.1.0",
     "tcomb-form": "^0.9.16"
   },
   "devDependencies": {

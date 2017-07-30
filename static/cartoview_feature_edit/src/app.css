@@ -20,21 +20,16 @@ html, body {
   margin-right: auto;
 }
 
-.featureTable {
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-  height: 100%;
-  overflow-y:scroll;
-  margin-right: auto!important;
-  margin-left: auto!important;
-}
-.FTable{
+.FTable {
   position: absolute;
+  display: none;
   z-index: 12;
   bottom: 0px;
+  min-height: 40%;
   display: block;
   height: 40% !important;
   width: 100% !important;
+  padding-bottom: 10px
 }
 
 .row:after {
@@ -164,20 +159,18 @@ html, body {
   display: block;
 }
 
-div.layer-tree-panel {
-  position: fixed;
-  margin-left: -60%;
-  margin-top: 20%;
+.featureTable {
+  display: block !important;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
-.attributes-table {
-  display: none;
+div.layer-tree-panel {
   position: fixed;
-  bottom: 0px;
-  left: 0;
-  height: 50%;
-  width: 100%;
-  z-index: 1;
+  margin-left: -23%;
+  margin-top: auto;
 }
 
 .layerselect {
@@ -229,6 +222,11 @@ div.layer-tree-panel {
     left: 1px;
     buttom: 1px;
 }*/
+
+#rotate-button {
+  position: relative;
+  padding: 10%;
+}
 
 #table {
   position: fixed;
@@ -312,6 +310,12 @@ div.layer-tree-panel {
   right: 100px;
   max-width: 50%;
   z-index: 11110111;
+}
+
+.ol-pop {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .ol-mouse-position {
